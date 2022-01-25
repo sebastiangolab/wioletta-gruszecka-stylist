@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-      title: `Wioletta Gruszecka Stylist`,
+    title: `Wioletta Gruszecka Stylist`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-root-import", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
