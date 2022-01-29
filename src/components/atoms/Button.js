@@ -10,6 +10,11 @@ const Button = styled(Link)`
   padding: 13px 55px 12px 55px;
   transition: ${({ theme }) => theme.transitions.background};
 
+  @media (max-width: 1199px) {
+    padding: 12px 45px 11px 45px;
+    font-size: ${({ theme }) => theme.fontSizes.m};
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
   }

@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.footer};
     line-height: 1.5em;
     padding-top: 1px;
+
+    @media (max-width: 1199px) {
+      font-size: ${({ theme }) => theme.fontSizes.max1199px.footer};
+    }
   }
 
   a {

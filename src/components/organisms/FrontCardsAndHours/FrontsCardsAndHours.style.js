@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import PageTitle from 'components/atoms/PageTitle';
+import styled from "styled-components";
+import PageTitle from "components/atoms/PageTitle";
 
 export const Wrapper = styled.div`
   margin-top: ${({ theme }) => theme.marginBetweenSections};
@@ -7,6 +7,16 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1589px) {
+    margin-top: ${({ theme }) => theme.max1589px.marginBetweenSections};
+    margin-bottom: ${({ theme }) => theme.max1589px.marginBetweenSections};
+  }
+
+  @media (max-width: 1199px) {
+    margin-top: ${({ theme }) => theme.max1199px.marginBetweenSections};
+    margin-bottom: ${({ theme }) => theme.max1199px.marginBetweenSections};
+  }
 `;
 
 export const Cards = styled.div`
@@ -16,9 +26,21 @@ export const Cards = styled.div`
   grid-gap: 50px;
   text-align: center;
 
+  @media (max-width: 1589px) {
+    grid-gap: 30px;
+  }
+
+  @media (max-width: 1199px) {
+    width: calc(64% - 30px);
+  }
+
   p {
     line-height: 1.6em;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+
+    @media (max-width: 1589px) {
+      min-height: 52px;
+    }
   }
 
   img {
@@ -30,7 +52,7 @@ export const Cards = styled.div`
 `;
 
 export const StyledPageTitle = styled(PageTitle)`
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const HoursContainer = styled.div`
@@ -40,4 +62,12 @@ export const HoursContainer = styled.div`
   align-items: center;
   border-left: 3px solid ${({ theme }) => theme.colors.primary};
   min-height: 457px;
+
+  @media (max-width: 1589px) {
+    min-height: 375px;
+  }
+
+  @media (max-width: 1199px) {
+    width: calc(37% - 10px);
+  }
 `;

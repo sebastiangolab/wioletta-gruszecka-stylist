@@ -1,11 +1,15 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 25px;
+  margin-top: 20px;
   position: relative;
+
+  @media (max-width: 1199px) {
+    width: calc(55% - 15px);
+  }
 `;
 
 export const Background = styled.div`
@@ -21,4 +25,8 @@ export const Background = styled.div`
     isFront
       ? `${theme.borderRadius} ${theme.borderRadius} 0 0`
       : theme.borderRadius};
+
+  @media (max-width: 1589px) {
+    width: calc(55% - 15px);
+  }
 `;

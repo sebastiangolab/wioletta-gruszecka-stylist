@@ -6,23 +6,61 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   margin-top: ${({ theme }) => theme.marginBetweenSections};
+
+  @media (max-width: 1589px) {
+    margin-top: ${({ theme }) => theme.max1589px.marginBetweenSections};
+  }
+
+  @media (max-width: 1199px) {
+    flex-wrap: wrap;
+    margin-top: ${({ theme }) => theme.max1199px.marginBetweenSections};
+  }
 `;
 
 export const TextSection = styled.div`
-  width: calc(25% - 15px);
-  padding-right: 75px;
+  width: calc(25% - 5px);
+  padding-right: 65px;
+
+  @media (max-width: 1589px) {
+    width: calc(25% - 5px);
+    padding-right: 20px;
+  }
+
+  @media (max-width: 1199px) {
+    width: calc(100%);
+    padding-right: 0;
+  }
 
   p {
     margin-bottom: 25px;
     line-height: 1.6em;
+
+    @media (max-width: 1589px) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 1199px) {
+      margin-bottom: 15px;
+    }
   }
 `;
 
 export const ServicesList = styled.div`
-  width: calc(75% - 15px);
+  width: calc(75% - 5px);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 25px;
+
+  @media (max-width: 1589px) {
+    width: calc(75% - 5px);
+    grid-gap: 15px;
+  }
+
+  @media (max-width: 1199px) {
+    width: calc(100%);
+    grid-gap: 25px;
+    margin-top: 30px;
+  }
 `;
 
 export const Service = styled.div`
@@ -33,11 +71,21 @@ export const Service = styled.div`
   padding: 52px 10px;
   border-radius: ${({ theme }) => theme.borderRadius};
 
+  @media (max-width: 1199px) {
+    padding: 40px 10px;
+  }
+
   h2 {
     font-size: ${({ theme }) => theme.fontSizes.xl};
     font-weight: ${({ theme }) => theme.fontWeights.regular};
     line-height: 1.5em;
     margin-bottom: 16px;
+    text-align: center;
+
+    @media (max-width: 1589px) {
+      font-size: ${({ theme }) => theme.fontSizes.m};
+      margin-bottom: 15px;
+    }
   }
 `;
 

@@ -13,17 +13,13 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import PageTitle from 'components/atoms/PageTitle';
 import FrontCoverImg from 'images/front-cover-img.png';
 
-const FrontCover = () => (
+const FrontCover = ({ text }) => (
   <Wrapper>
     <Row>
       <Column1>
         <TextSection>
           <PageTitle>Wioletta Gruszecka Stylist</PageTitle>
-          <p>
-            My name is Wioletta and I am a professional and qualified hair
-            stylist with many years of experience and the love for creating
-            beautiful hair is my passion.
-          </p>
+          <p>{text}</p>
           <Button to="/services">View services</Button>
         </TextSection>
 

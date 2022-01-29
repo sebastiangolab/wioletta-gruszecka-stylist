@@ -12,23 +12,14 @@ import {
 import PageTitle from 'components/atoms/PageTitle';
 import FrontAboutImg from 'images/front-about-img.png';
 
-const FrontAbout = () => (
+const FrontAbout = ({ aboutText1, aboutText2 }) => (
   <Wrapper>
     <Column1>
       <PageTitle>Little more about me</PageTitle>
 
       <TextRow>
-        <p>
-          I began my journey with hair as a young girl. I went to a hairdressing
-          technical school and at the same time, at the age of 16, I started
-          working as a hairdresser after school hours in Jean Louis David.
-        </p>
-
-        <p>
-          Currently I run my own salon in Bristol, where I am constantly
-          developing my passion and taking part in additional training and
-          courses as I am always open to learning new ideas and techniques.
-        </p>
+        <p>{aboutText1}</p>
+        <p>{aboutText2}</p>
       </TextRow>
 
       <ReviewContainer>

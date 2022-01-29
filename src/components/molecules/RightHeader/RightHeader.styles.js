@@ -4,9 +4,17 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 26px;
+  margin-top: 24px;
   margin-bottom: 26px;
-  margin-right: 78px;
+  margin-right: 75px;
+
+  @media (max-width: 1589px) {
+    margin-right: 30px;
+  }
+
+  @media (max-width: 1199px) {
+    margin-right: 20px;
+  }
 `;
 
 export const Tel = styled.a`
@@ -25,6 +33,15 @@ export const Tel = styled.a`
     font-size: 19px;
     margin-right: 10px;
   }
+
+  @media (max-width: 1199px) {
+    font-size: ${({ theme }) => theme.fontSizes.max1199px.headerButtons};
+
+    svg {
+      font-size: 18px;
+      margin-right: 7px;
+    }
+  }
 `;
 
 export const BookButton = styled.a`
@@ -39,5 +56,15 @@ export const BookButton = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.blackHover};
+  }
+
+  @media (max-width: 1589px) {
+    padding: 13px 50px 12px 50px;
+    margin-top: 11px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 11px 32px 10px 32px;
+    margin-top: 10px;
   }
 `;

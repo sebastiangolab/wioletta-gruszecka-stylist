@@ -4,12 +4,12 @@ import {
   Cards,
   HoursContainer,
   StyledPageTitle,
-} from './FrontsCardsAndHours.style';
-import VoucherForServicesImg from 'images/voucher-for-services.jpg';
-import LoyaltyCardImg from 'images/loyalty-card.jpg';
-import OpeningHours from 'components/molecules/OpeningHours/OpeningHours';
+} from "./FrontsCardsAndHours.style";
+import VoucherForServicesImg from "images/voucher-for-services.jpg";
+import LoyaltyCardImg from "images/loyalty-card.jpg";
+import OpeningHours from "components/molecules/OpeningHours/OpeningHours";
 
-const FrontCardsAndHours = () => (
+const FrontCardsAndHours = ({ daysHour }) => (
   <Wrapper>
     <Cards>
       <div>
@@ -26,7 +26,15 @@ const FrontCardsAndHours = () => (
     </Cards>
 
     <HoursContainer>
-      <OpeningHours />
+      <OpeningHours
+        monday={daysHour.monday}
+        tuesday={daysHour.tuesday}
+        wednesday={daysHour.wednesday}
+        thursday={daysHour.thursday}
+        friday={daysHour.friday}
+        saturday={daysHour.saturday}
+        sunday={daysHour.sunday}
+      />
     </HoursContainer>
   </Wrapper>
 );
