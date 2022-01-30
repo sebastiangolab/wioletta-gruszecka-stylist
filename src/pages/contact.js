@@ -27,7 +27,7 @@ const Contact = ({ data: { datoCmsContact: cms } }) => (
 
       <ContactParagraph>
         <ContactIcon icon={faMapMarkerAlt} />
-        {cms.adres1}
+        {cms.adres1}{" "}
         <br />
         {cms.adres2}
       </ContactParagraph>

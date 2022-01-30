@@ -7,8 +7,13 @@ export const Wrapper = styled.div`
   margin-top: 20px;
   position: relative;
 
-  @media (max-width: 1199px) {
-    width: calc(55% - 15px);
+  @media (max-width: 767px) {
+    margin-top: 15px;
+    align-items: center;
+  }
+
+  @media (max-width: 575px) {
+    flex-direction: column;
   }
 `;
 
@@ -28,5 +33,9 @@ export const Background = styled.div`
 
   @media (max-width: 1589px) {
     width: calc(55% - 15px);
+  }
+
+  @media (max-width: 767px) {
+    display: none;
   }
 `;

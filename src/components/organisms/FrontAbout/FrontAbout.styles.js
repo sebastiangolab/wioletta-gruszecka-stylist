@@ -14,6 +14,20 @@ export const Wrapper = styled.div`
   @media (max-width: 1199px) {
     margin-top: ${({ theme }) => theme.max1199px.marginBetweenSections};
   }
+
+  @media (max-width: 991px) {
+    flex-wrap: wrap;
+    margin-top: ${({ theme }) => theme.max991px.marginBetweenSections};
+  }
+
+  @media (max-width: 767px) {
+    margin-top: ${({ theme }) => theme.max767px.marginBetweenSections};
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 
 export const Column1 = styled.div`
@@ -21,6 +35,10 @@ export const Column1 = styled.div`
 
   @media (max-width: 1199px) {
     width: calc(58.33333333% - 15px);
+  }
+
+  @media (max-width: 991px) {
+    width: calc(100%);
   }
 `;
 
@@ -35,6 +53,16 @@ export const TextRow = styled.div`
     grid-gap: 25px;
     margin-bottom: 30px;
   }
+
+  @media (max-width: 991px) {
+    grid-gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+  }
 `;
 
 export const ReviewContainer = styled.div`
@@ -44,6 +72,10 @@ export const ReviewContainer = styled.div`
 
   @media (max-width: 1199px) {
     padding: 25px 20px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 15px 15px;
   }
 
   p {
@@ -64,6 +96,10 @@ export const Column2 = styled.div`
 
   @media (max-width: 1199px) {
     width: calc(41.66666667% - 15px);
+  }
+
+  @media (max-width: 991px) {
+    display: none;
   }
 `;
 

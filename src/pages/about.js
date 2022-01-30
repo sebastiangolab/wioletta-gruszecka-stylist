@@ -2,15 +2,16 @@ import React from "react";
 import ContentTemplate from "templates/ContentTemplate/ContentTemplate";
 import ContentContainer from "components/atoms/ContentContainer";
 import GalleryModule from "components/molecules/GalleryModule/GalleryModule";
+import AboutParagraph from "components/atoms/AboutParagraph";
 import { graphql } from "gatsby";
 
 const About = ({ data: { datoCmsAbout: cms } }) => (
   <ContentTemplate title="About us">
     <ContentContainer>
-      <p>{cms.text1}</p>
-      <p>{cms.text2}</p>
+      <AboutParagraph>{cms.text1}</AboutParagraph>
+      <AboutParagraph>{cms.text2}</AboutParagraph>
     </ContentContainer>
-    <GalleryModule images={cms.gallery} />
+    <GalleryModule isTabletLastImageHide images={cms.gallery} />
   </ContentTemplate>
 );
 

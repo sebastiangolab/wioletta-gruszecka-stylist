@@ -12,4 +12,8 @@ export const Wrapper = styled.div`
             width: 180px;
         }
     }
+
+    @media (max-width: 575px) {
+        margin-bottom: 20px;
+    }
 `;

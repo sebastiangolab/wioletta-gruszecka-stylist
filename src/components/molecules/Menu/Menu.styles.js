@@ -14,6 +14,10 @@ export const Wrapper = styled.div`
   @media (max-width: 1199px) {
     margin-top: 29px;
   }
+
+  @media (max-width: 991px) {
+    display: none;
+  }
 `;
 
 export const StyledLink = styled(Link)`

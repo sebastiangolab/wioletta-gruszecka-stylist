@@ -12,6 +12,19 @@ export const Wrapper = styled.div`
   @media (max-width: 1199px) {
     margin-top: ${({ theme }) => theme.max1199px.marginBetweenSections};
   }
+
+  @media (max-width: 991px) {
+    margin-top: ${({ theme }) => theme.max991px.marginBetweenSections};
+  }
+
+  @media (max-width: 767px) {
+    margin-top: ${({ theme }) => theme.max767px.marginBetweenSections};
+  }
+  
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 
 export const StyledButton = styled(Button)`

@@ -15,6 +15,19 @@ export const Wrapper = styled.div`
     flex-wrap: wrap;
     margin-top: ${({ theme }) => theme.max1199px.marginBetweenSections};
   }
+
+  @media (max-width: 991px) {
+    margin-top: ${({ theme }) => theme.max991px.marginBetweenSections};
+  }
+
+  @media (max-width: 767px) {
+    margin-top: ${({ theme }) => theme.max767px.marginBetweenSections};
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 
 export const TextSection = styled.div`
@@ -61,6 +74,19 @@ export const ServicesList = styled.div`
     grid-gap: 25px;
     margin-top: 30px;
   }
+
+  @media (max-width: 991px) {
+    grid-gap: 20px;
+    margin-top: 25px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Service = styled.div`
@@ -73,6 +99,14 @@ export const Service = styled.div`
 
   @media (max-width: 1199px) {
     padding: 40px 10px;
+  }
+
+  @media (max-width: 991px) {
+    padding: 35px 10px;
+  }
+
+  @media (max-width: 575px) {
+    padding: 30px 10px;
   }
 
   h2 {

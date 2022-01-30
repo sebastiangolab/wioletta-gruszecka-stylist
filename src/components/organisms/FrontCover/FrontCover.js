@@ -7,11 +7,11 @@ import {
   TextSection,
   Socials,
   Image,
-} from './FrontCover.styles';
-import Button from 'components/atoms/Button';
+} from "./FrontCover.styles";
+import Button from "components/atoms/Button";
+import PageTitle from "components/atoms/PageTitle";
+import FrontCoverImg from "images/front-cover-img.png";
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import PageTitle from 'components/atoms/PageTitle';
-import FrontCoverImg from 'images/front-cover-img.png';
 
 const FrontCover = ({ text }) => (
   <Wrapper>

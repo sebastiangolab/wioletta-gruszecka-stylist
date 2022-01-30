@@ -10,6 +10,12 @@ const ContactParagraph = styled.p`
     font-size: ${({ theme }) => theme.fontSizes.s};
     margin-bottom: 12px !important;
   }
+
+  @media (max-width: 575px) {
+    & br {
+      display: none;
+    }
+  }
 `;
 
 export default ContactParagraph;

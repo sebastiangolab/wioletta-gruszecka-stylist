@@ -20,7 +20,6 @@ export const theme = {
     s: "16px",
     serviceDescription: "15px",
     xs: "14px",
-
     max1199px: {
       title: "25px",
       category: "22px",
@@ -30,6 +29,10 @@ export const theme = {
       headerButtons: "17px",
       contactIcon: "17px",
       footer: "15px",
+    },
+    max575px: {
+      servicePrice: "17px",
+      serviceTitle: "17px",
     },
   },
   fontWeights: {
@@ -48,5 +51,11 @@ export const theme = {
   },
   max1199px: {
     marginBetweenSections: "60px",
+  },
+  max991px: {
+    marginBetweenSections: "50px",
+  },
+  max767px: {
+    marginBetweenSections: "50px",
   },
 };

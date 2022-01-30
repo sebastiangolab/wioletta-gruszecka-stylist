@@ -14,10 +14,31 @@ export const Wrapper = styled.div`
     grid-gap: 20px;
   }
 
+  @media (max-width: 991px) {
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    & img:last-child {
+      display: ${({ isTabletLastImageHide }) =>
+        isTabletLastImageHide ? "none" : "block"};
+    }
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    & img:last-child {
+      display: block;
+    }
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   img {
     border: 1px solid #eee;
     border-radius: ${({ theme }) => theme.borderRadius};
-    max-width: 374px;
     max-height: 300px;
     width: 100%;
     height: auto;

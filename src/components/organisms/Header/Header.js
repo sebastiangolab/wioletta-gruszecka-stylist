@@ -6,7 +6,7 @@ import Menu from "components/molecules/Menu/Menu";
 import RightHeader from "components/molecules/RightHeader/RightHeader";
 import { checkIsFront } from "helpers/checkIsFront";
 
-const Header = () => {
+const Header = ({ openMobileMenu, closeMobileMenu }) => {
   const [isFront, setIsFront] = useState(
     checkIsFront(globalHistory.location.pathname)
   );
@@ -15,6 +15,7 @@ const Header = () => {
     return globalHistory.listen(({ action }) => {
       if (action === "PUSH")
         setIsFront(checkIsFront(globalHistory.location.pathname));
+        closeMobileMenu();
     });
   }, [setIsFront]);
 
@@ -22,7 +23,7 @@ const Header = () => {
     <Wrapper>
       <Logo />
       <Menu />
-      <RightHeader />
+      <RightHeader openMobileMenu={openMobileMenu} />
       <Background isFront={isFront} />
     </Wrapper>
   );

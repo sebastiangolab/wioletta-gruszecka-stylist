@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Wrapper } from "./GalleryModule.styles";
 import Lightbox from "react-image-lightbox";
 
-const Gallery = ({ isGalleryPage = false, ...args }) => {
+const Gallery = ({
+  isGalleryPage = false,
+  isTabletLastImageHide = false,
+  ...args
+}) => {
   const images = args.images.map((image) => image.url);
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -14,7 +18,10 @@ const Gallery = ({ isGalleryPage = false, ...args }) => {
   };
 
   return (
-    <Wrapper isGalleryPage={isGalleryPage}>
+    <Wrapper
+      isGalleryPage={isGalleryPage}
+      isTabletLastImageHide={isTabletLastImageHide}
+    >
       {images.map((image, index) => (
         <img
           key={image}

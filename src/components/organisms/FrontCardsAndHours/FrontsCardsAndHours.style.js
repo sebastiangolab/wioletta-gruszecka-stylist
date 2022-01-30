@@ -17,6 +17,17 @@ export const Wrapper = styled.div`
     margin-top: ${({ theme }) => theme.max1199px.marginBetweenSections};
     margin-bottom: ${({ theme }) => theme.max1199px.marginBetweenSections};
   }
+
+  @media (max-width: 991px) {
+    flex-wrap: wrap;
+    margin-top: ${({ theme }) => theme.max991px.marginBetweenSections};
+    margin-bottom: ${({ theme }) => theme.max991px.marginBetweenSections};
+  }
+
+  @media (max-width: 767px) {
+    margin-top: ${({ theme }) => theme.max767px.marginBetweenSections};
+    margin-bottom: ${({ theme }) => theme.max767px.marginBetweenSections};
+  }
 `;
 
 export const Cards = styled.div`
@@ -34,6 +45,20 @@ export const Cards = styled.div`
     width: calc(64% - 30px);
   }
 
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   p {
     line-height: 1.6em;
     margin-bottom: 10px;
@@ -41,6 +66,10 @@ export const Cards = styled.div`
     @media (max-width: 1589px) {
       min-height: 52px;
     }
+
+    @media (max-width: 767px) {
+      min-height: 0;
+    } 
   }
 
   img {
@@ -69,5 +98,13 @@ export const HoursContainer = styled.div`
 
   @media (max-width: 1199px) {
     width: calc(37% - 10px);
+  }
+
+  @media (max-width: 991px) {
+    width: 100%;
+    min-height: 0;
+    padding: 30px 15px;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    margin-top: 50px;
   }
 `;

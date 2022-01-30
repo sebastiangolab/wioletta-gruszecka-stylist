@@ -18,6 +18,10 @@ export const GlobalStyles = createGlobalStyle`
         color: ${theme.colors.black};
         font-size: ${theme.fontSizes.s};
         font-weight: ${theme.fontWeights.light};
+
+        @media (max-width: 1199px) {
+            font-size: 15px;
+        }
     }
 
     a {

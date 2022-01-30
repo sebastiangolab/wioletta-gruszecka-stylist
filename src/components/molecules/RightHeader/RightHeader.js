@@ -1,8 +1,9 @@
 import React from "react";
 import { Wrapper, BookButton, Tel } from "./RightHeader.styles";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt } from 'react-icons/fa';
+import MobileMenuButton from "components/molecules/MobileMenuButton/MobileMenuButton";
 
-const RightHeader = () => (
+const RightHeader = ({ openMobileMenu }) => (
   <Wrapper>
     <Tel href="tel:+447919028614">
       <FaPhoneAlt />
@@ -14,6 +15,7 @@ const RightHeader = () => (
     >
       Book on Booksy
     </BookButton>
+    <MobileMenuButton onClick={openMobileMenu} />
   </Wrapper>
 );
 
