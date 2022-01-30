@@ -22,6 +22,8 @@ export const Wrapper = styled.div`
 
   @media (max-width: 767px) {
     margin-top: ${({ theme }) => theme.max767px.marginBetweenSections};
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   @media (max-width: 575px) {

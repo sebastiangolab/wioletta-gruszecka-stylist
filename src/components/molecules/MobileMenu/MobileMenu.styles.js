@@ -14,8 +14,8 @@ export const Wrapper = styled.div`
   padding-top: 25px;
   background-color: ${({ theme }) => theme.colors.primary};
   z-index: 99999999;
-  transform: ${({isOpen}) => isOpen ? 'translateX(0)' : 'translateX(-100vh)' };
-  transition: transform 0.3s;
+  transform: ${({isOpen}) => isOpen ? 'translateX(0)' : 'translateX(-150vw)' };
+  transition: transform 0.4s;
 
   @media (max-width: 991px) {
     display: flex;

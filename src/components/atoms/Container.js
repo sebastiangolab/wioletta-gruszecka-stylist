@@ -8,7 +8,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     padding-left: 0;
     padding-right: 0;
   }

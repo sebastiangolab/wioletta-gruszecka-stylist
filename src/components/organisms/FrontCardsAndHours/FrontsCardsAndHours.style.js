@@ -27,6 +27,13 @@ export const Wrapper = styled.div`
   @media (max-width: 767px) {
     margin-top: ${({ theme }) => theme.max767px.marginBetweenSections};
     margin-bottom: ${({ theme }) => theme.max767px.marginBetweenSections};
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 `;
 
@@ -54,11 +61,6 @@ export const Cards = styled.div`
     grid-gap: 50px;
   }
 
-  @media (max-width: 575px) {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   p {
     line-height: 1.6em;
     margin-bottom: 10px;
@@ -69,11 +71,11 @@ export const Cards = styled.div`
 
     @media (max-width: 767px) {
       min-height: 0;
-    } 
+    }
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border: 1px solid ${({ theme }) => theme.colors.primary};
     border-radius: ${({ theme }) => theme.borderRadius};
@@ -105,6 +107,12 @@ export const HoursContainer = styled.div`
     min-height: 0;
     padding: 30px 15px;
     border: 1px solid ${({ theme }) => theme.colors.primary};
+    border-radius: ${({ theme }) => theme.borderRadius};
     margin-top: 50px;
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 0;
+    padding-right: 0;
   }
 `;

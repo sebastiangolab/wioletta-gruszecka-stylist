@@ -2,15 +2,7 @@ import styled from "styled-components";
 import HeaderCoverBackground from "images/header-cover-background.jpg";
 
 export const Wrapper = styled.div`
-  height: calc(100vh - 194px);
-  overflow: hidden;
   position: relative;
-  @media (max-width: 1589px) {
-    height: calc(100vh - 181px);
-  }
-  @media (max-width: 1199px) {
-    height: calc(100vh - 162px);
-  }
 `;
 
 export const Row = styled.div`
@@ -31,21 +23,59 @@ export const Column1 = styled.div`
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: calc(100vh - 189px);
+
+  @media (max-width: 1589px) {
+    min-height: calc(100vh - 181px);
+  }
+
+  @media (max-width: 1199px) {
+    min-height: calc(100vh - 170px);
+  }
+
+  @media (max-width: 991px) {
+    min-height: calc(100vh - 112px);
+  }
+
+  @media (max-width: 767px) {
+    min-height: calc(100vh - 86px);
+  }
+
+  @media (max-width: 575px) {
+    min-height: calc(100vh - 155px);
+  }
 `;
 
 export const TextSection = styled.div`
   margin-bottom: 20%;
   padding-left: 50px;
   max-width: 435px;
+
   @media (max-width: 1589px) {
     padding-left: 20px;
     margin-bottom: 15%;
   }
+
   @media (max-width: 1199px) {
     padding-left: 10px;
     margin-bottom: 13%;
     padding-right: 20px;
   }
+
+  @media (max-width: 991px) {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 30px 20px;
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   p {
     line-height: 1.6em;
     margin-bottom: 25px;
@@ -96,12 +126,18 @@ export const Column2 = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 0 0 ${({ theme }) => theme.borderRadius} 0;
   width: calc(58.33333333% - 15px);
-  height: 100%;
+  height: ${({ height }) => `${height}px`};
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
+
   @media (max-width: 1589px) {
     width: calc(55% - 15px);
+  }
+
+  @media (max-width: 767px) {
+    display: none;
   }
 `;
 
@@ -115,6 +151,7 @@ export const Image = styled.div`
   padding-right: 5%;
   padding-top: 2%;
   padding-bottom: 5%;
+
   @media (max-width: 1199px) {
     padding-left: 3.5%;
     padding-right: 3.5%;

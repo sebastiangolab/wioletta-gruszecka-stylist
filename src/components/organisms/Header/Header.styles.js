@@ -7,13 +7,20 @@ export const Wrapper = styled.div`
   margin-top: 20px;
   position: relative;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     margin-top: 15px;
+  }
+
+  @media (max-width: 767px) {
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   @media (max-width: 575px) {
     flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 `;
 

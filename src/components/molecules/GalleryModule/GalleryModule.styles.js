@@ -40,6 +40,7 @@ export const Wrapper = styled.div`
     border: 1px solid #eee;
     border-radius: ${({ theme }) => theme.borderRadius};
     max-height: 300px;
+    min-height: 100%;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -50,6 +51,14 @@ export const Wrapper = styled.div`
 
     &:hover {
       opacity: 0.85;
+    }
+
+    @media (max-width: 991px) {
+      max-height: 360px;
+    }
+
+    @media (max-width: 575px) {
+      max-height: 400px;
     }
   }
 `;
