@@ -11,41 +11,45 @@ import {
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
+import SEO from "components/SEO";
 
 const Contact = ({ data: { datoCmsContact: cms } }) => (
-  <ContentTemplate title="Contact">
-    <ContentContainer>
-      <ContactParagraph>
-        <ContactIcon icon={faPhoneAlt} />
-        {cms.phone}
-      </ContactParagraph>
+  <>
+    <SEO title="Contact | Wioletta Gruszecka Stylist" />
 
-      <ContactParagraph>
-        <ContactIcon icon={faEnvelope} />
-        {cms.email}
-      </ContactParagraph>
+    <ContentTemplate title="Contact">
+      <ContentContainer>
+        <ContactParagraph>
+          <ContactIcon icon={faPhoneAlt} />
+          {cms.phone}
+        </ContactParagraph>
 
-      <ContactParagraph>
-        <ContactIcon icon={faMapMarkerAlt} />
-        {cms.adres1}{" "}
-        <br />
-        {cms.adres2}
-      </ContactParagraph>
+        <ContactParagraph>
+          <ContactIcon icon={faEnvelope} />
+          {cms.email}
+        </ContactParagraph>
 
-      <OpeningHours
-        monday={cms.monday}
-        tuesday={cms.tuesday}
-        wednesday={cms.wednesday}
-        thursday={cms.thursday}
-        friday={cms.friday}
-        saturday={cms.saturday}
-        sunday={cms.sunday}
-        isContactPage
-      />
-    </ContentContainer>
+        <ContactParagraph>
+          <ContactIcon icon={faMapMarkerAlt} />
+          {cms.adres1} <br />
+          {cms.adres2}
+        </ContactParagraph>
 
-    <Map />
-  </ContentTemplate>
+        <OpeningHours
+          monday={cms.monday}
+          tuesday={cms.tuesday}
+          wednesday={cms.wednesday}
+          thursday={cms.thursday}
+          friday={cms.friday}
+          saturday={cms.saturday}
+          sunday={cms.sunday}
+          isContactPage
+        />
+      </ContentContainer>
+
+      <Map />
+    </ContentTemplate>
+  </>
 );
 
 export default Contact;

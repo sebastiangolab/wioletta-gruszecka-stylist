@@ -8,11 +8,13 @@ import FrontCardsAndHours from "components/organisms/FrontCardsAndHours/FrontCar
 import FullContainer from "components/atoms/FullContainer";
 import PageBackground from "components/atoms/PageBackground";
 import { graphql } from "gatsby";
+import SEO from "components/SEO";
 
 const IndexPage = ({
   data: { datoCmsHome: cms, datoCmsContact: daysHour },
 }) => (
   <>
+    <SEO title="Wioletta Gruszecka Stylist" />
     <Container>
       <FrontCover text={cms.mainText} />
     </Container>

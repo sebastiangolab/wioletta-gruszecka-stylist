@@ -3,13 +3,18 @@ import ContentTemplate from "templates/ContentTemplate/ContentTemplate";
 import ReviewsList from "components/organisms/ReviewsList/ReviewsList";
 import ContentContainer from "components/atoms/ContentContainer";
 import { graphql } from "gatsby";
+import SEO from "components/SEO";
 
 const Reviews = ({ data: { allDatoCmsReview: reviews } }) => (
-  <ContentTemplate title="Reviews">
-    <ContentContainer>
-      <ReviewsList reviews={reviews.edges} />
-    </ContentContainer>
-  </ContentTemplate>
+  <>
+    <SEO title="Reviews | Wioletta Gruszecka Stylist" />
+
+    <ContentTemplate title="Reviews">
+      <ContentContainer>
+        <ReviewsList reviews={reviews.edges} />
+      </ContentContainer>
+    </ContentTemplate>
+  </>
 );
 
 export default Reviews;
