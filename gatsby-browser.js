@@ -5,11 +5,11 @@ import { theme } from "styles/theme";
 import MainTemplate from "templates/MainTemplate";
 import "react-image-lightbox/style.css";
 
-export const wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element, props }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <MainTemplate>{element}</MainTemplate>
+      <MainTemplate {...props}>{element}</MainTemplate>
     </ThemeProvider>
   );
 };
