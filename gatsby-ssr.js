@@ -5,7 +5,7 @@ import { theme } from "styles/theme";
 import MainTemplate from "templates/MainTemplate";
 import "react-image-lightbox/style.css";
 
-export const wrapRootElement = ({ element, props }) => {
+export const wrapPageElement = ({ element, props }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
