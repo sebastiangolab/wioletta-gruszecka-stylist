@@ -5,9 +5,10 @@ import {
   HoursContainer,
   StyledPageTitle,
 } from "./FrontsCardsAndHours.style";
-import VoucherForServicesImg from "images/voucher-for-services.jpg";
-import LoyaltyCardImg from "images/loyalty-card.jpg";
+// import VoucherForServicesImg from "images/voucher-for-services.jpg";
+// import LoyaltyCardImg from "images/loyalty-card.jpg";
 import OpeningHours from "components/molecules/OpeningHours/OpeningHours";
+import { StaticImage } from "gatsby-plugin-image";
 
 const FrontCardsAndHours = ({ daysHour }) => (
   <Wrapper>
@@ -15,13 +16,21 @@ const FrontCardsAndHours = ({ daysHour }) => (
       <div>
         <StyledPageTitle>Voucher for services</StyledPageTitle>
         <p>In our salon you can order a voucher for services</p>
-        <img src={VoucherForServicesImg} alt="voucher for services" />
+        <StaticImage
+          src="../../../images/voucher-for-services.jpg"
+          alt="voucher for services"
+          placeholder="none"
+        />
       </div>
 
       <div>
         <StyledPageTitle>Loyalty card</StyledPageTitle>
         <p>Collect stamps on the card to get promotions for services</p>
-        <img src={LoyaltyCardImg} alt="loyalty card" />
+        <StaticImage
+          src="../../../images/loyalty-card.jpg"
+          alt="loyalty card"
+          placeholder="none"
+        />
       </div>
     </Cards>
 

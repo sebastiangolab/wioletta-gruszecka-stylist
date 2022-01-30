@@ -2,13 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { Wrapper } from "./GalleryModule.styles";
 import Lightbox from "react-image-lightbox";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Gallery = ({
   isGalleryPage = false,
   isTabletLastImageHide = false,
   ...args
 }) => {
-  const images = args.images.map((image) => image.url);
+  const images = args.images;
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -22,14 +23,17 @@ const Gallery = ({
       isGalleryPage={isGalleryPage}
       isTabletLastImageHide={isTabletLastImageHide}
     >
-      {images.map((image, index) => (
-        <img
-          key={image}
-          src={image}
-          onClick={() => handleOnClickImage(index)}
-          alt="hair stylist realization"
-        />
-      ))}
+      {images.map((image, index) => {
+        const image2 = getImage(image);
+        return (
+          <GatsbyImage
+            key={index}
+            image={image2}
+            onClick={() => handleOnClickImage(index)}
+            alt="hair stylist realization"
+          />
+        );
+      })}
 
       {isOpen && (
         <Lightbox

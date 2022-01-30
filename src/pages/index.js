@@ -7,62 +7,67 @@ import FrontGallery from "components/organisms/FrontGallery/FrontGallery";
 import FrontCardsAndHours from "components/organisms/FrontCardsAndHours/FrontCardsAndHours";
 import FullContainer from "components/atoms/FullContainer";
 import PageBackground from "components/atoms/PageBackground";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import SEO from "components/SEO";
 
-const IndexPage = ({
-  data: { datoCmsHome: cms, datoCmsContact: daysHour },
-}) => (
-  <>
-    <SEO title="Wioletta Gruszecka Stylist" />
-    <Container>
-      <FrontCover text={cms.mainText} />
-    </Container>
+const IndexPage = () => {
+  const { datoCmsHome, datoCmsContact } = useStaticQuery(
+    graphql`
+      query IndexQuery {
+        datoCmsHome {
+          mainText
+          aboutText1
+          aboutText2
+          servicesText
+          gallery {
+            gatsbyImageData
+          }
+        }
+        datoCmsContact {
+          monday
+          tuesday
+          wednesday
+          thursday
+          friday
+          saturday
+          sunday
+        }
+      }
+    `
+  );
 
-    <FullContainer>
-      <PageBackground />
-
+  return (
+    <>
+      <SEO title="Wioletta Gruszecka Stylist" />
       <Container>
-        <FrontAbout aboutText1={cms.aboutText1} aboutText2={cms.aboutText2} />
-        <FrontServices servicesText={cms.servicesText} />
-        <FrontGallery images={cms.gallery} />
-        <FrontCardsAndHours
-          daysHour={{
-            monday: daysHour.monday,
-            tuesday: daysHour.tuesday,
-            wednesday: daysHour.wednesday,
-            thursday: daysHour.thursday,
-            friday: daysHour.friday,
-            saturday: daysHour.saturday,
-            sunday: daysHour.sunday,
-          }}
-        />
+        <FrontCover text={datoCmsHome.mainText} />
       </Container>
-    </FullContainer>
-  </>
-);
+
+      <FullContainer>
+        <PageBackground />
+
+        <Container>
+          <FrontAbout
+            aboutText1={datoCmsHome.aboutText1}
+            aboutText2={datoCmsHome.aboutText2}
+          />
+          <FrontServices servicesText={datoCmsHome.servicesText} />
+          <FrontGallery images={datoCmsHome.gallery} />
+          <FrontCardsAndHours
+            daysHour={{
+              monday: datoCmsContact.monday,
+              tuesday: datoCmsContact.tuesday,
+              wednesday: datoCmsContact.wednesday,
+              thursday: datoCmsContact.thursday,
+              friday: datoCmsContact.friday,
+              saturday: datoCmsContact.saturday,
+              sunday: datoCmsContact.sunday,
+            }}
+          />
+        </Container>
+      </FullContainer>
+    </>
+  );
+};
 
 export default IndexPage;
-
-export const query = graphql`
-  query IndexQuery {
-    datoCmsHome {
-      mainText
-      aboutText1
-      aboutText2
-      servicesText
-      gallery {
-        url
-      }
-    }
-    datoCmsContact {
-      monday
-      tuesday
-      wednesday
-      thursday
-      friday
-      saturday
-      sunday
-    }
-  }
-`;

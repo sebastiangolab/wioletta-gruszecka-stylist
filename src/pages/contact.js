@@ -10,64 +10,68 @@ import {
   faEnvelope,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import SEO from "components/SEO";
 
-const Contact = ({ data: { datoCmsContact: cms } }) => (
-  <>
-    <SEO title="Contact | Wioletta Gruszecka Stylist" />
+const Contact = () => {
+  const { datoCmsContact } = useStaticQuery(
+    graphql`
+      query ContactQuery {
+        datoCmsContact {
+          phone
+          email
+          adres1
+          adres2
+          monday
+          tuesday
+          wednesday
+          thursday
+          friday
+          saturday
+          sunday
+        }
+      }
+    `
+  );
 
-    <ContentTemplate title="Contact">
-      <ContentContainer>
-        <ContactParagraph>
-          <ContactIcon icon={faPhoneAlt} />
-          {cms.phone}
-        </ContactParagraph>
+  return (
+    <>
+      <SEO title="Contact | Wioletta Gruszecka Stylist" />
 
-        <ContactParagraph>
-          <ContactIcon icon={faEnvelope} />
-          {cms.email}
-        </ContactParagraph>
+      <ContentTemplate title="Contact">
+        <ContentContainer>
+          <ContactParagraph>
+            <ContactIcon icon={faPhoneAlt} />
+            {datoCmsContact.phone}
+          </ContactParagraph>
 
-        <ContactParagraph>
-          <ContactIcon icon={faMapMarkerAlt} />
-          {cms.adres1} <br />
-          {cms.adres2}
-        </ContactParagraph>
+          <ContactParagraph>
+            <ContactIcon icon={faEnvelope} />
+            {datoCmsContact.email}
+          </ContactParagraph>
 
-        <OpeningHours
-          monday={cms.monday}
-          tuesday={cms.tuesday}
-          wednesday={cms.wednesday}
-          thursday={cms.thursday}
-          friday={cms.friday}
-          saturday={cms.saturday}
-          sunday={cms.sunday}
-          isContactPage
-        />
-      </ContentContainer>
+          <ContactParagraph>
+            <ContactIcon icon={faMapMarkerAlt} />
+            {datoCmsContact.adres1} <br />
+            {datoCmsContact.adres2}
+          </ContactParagraph>
 
-      <Map />
-    </ContentTemplate>
-  </>
-);
+          <OpeningHours
+            monday={datoCmsContact.monday}
+            tuesday={datoCmsContact.tuesday}
+            wednesday={datoCmsContact.wednesday}
+            thursday={datoCmsContact.thursday}
+            friday={datoCmsContact.friday}
+            saturday={datoCmsContact.saturday}
+            sunday={datoCmsContact.sunday}
+            isContactPage
+          />
+        </ContentContainer>
+
+        <Map />
+      </ContentTemplate>
+    </>
+  );
+};
 
 export default Contact;
-
-export const query = graphql`
-  query ContactQuery {
-    datoCmsContact {
-      phone
-      email
-      adres1
-      adres2
-      monday
-      tuesday
-      wednesday
-      thursday
-      friday
-      saturday
-      sunday
-    }
-  }
-`;

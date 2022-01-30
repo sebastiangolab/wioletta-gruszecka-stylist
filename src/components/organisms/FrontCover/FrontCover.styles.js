@@ -158,11 +158,15 @@ export const Image = styled.div`
     padding-top: 0;
     padding-bottom: 4%;
   }
-  & img {
+  & > div {
     display: block;
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
+
+    img {
+      object-fit: contain !important;
+    }
   }
 `;

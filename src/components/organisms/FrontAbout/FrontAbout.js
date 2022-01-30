@@ -8,9 +8,10 @@ import {
   Column2,
   Image,
   Background,
-} from './FrontAbout.styles';
-import PageTitle from 'components/atoms/PageTitle';
-import FrontAboutImg from 'images/front-about-img.png';
+} from "./FrontAbout.styles";
+import PageTitle from "components/atoms/PageTitle";
+// import FrontAboutImg from 'images/front-about-img.png';
+import { StaticImage } from "gatsby-plugin-image";
 
 const FrontAbout = ({ aboutText1, aboutText2 }) => (
   <Wrapper>
@@ -35,7 +36,11 @@ const FrontAbout = ({ aboutText1, aboutText2 }) => (
 
     <Column2>
       <Image>
-        <img src={FrontAboutImg} alt="about me" />
+        <StaticImage
+          src="../../../images/front-about-img.png"
+          alt="about me"
+          placeholder="none"
+        />
       </Image>
       <Background />
     </Column2>

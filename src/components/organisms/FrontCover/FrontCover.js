@@ -10,8 +10,9 @@ import {
 } from "./FrontCover.styles";
 import Button from "components/atoms/Button";
 import PageTitle from "components/atoms/PageTitle";
-import FrontCoverImg from "images/front-cover-img.png";
+// import FrontCoverImg from "images/front-cover-img.png";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { StaticImage } from "gatsby-plugin-image";
 
 const FrontCover = ({ text }) => {
   const element = useRef();
@@ -62,7 +63,11 @@ const FrontCover = ({ text }) => {
 
         <Column2 height={height}>
           <Image>
-            <img src={FrontCoverImg} alt="hair services" />
+            <StaticImage
+              src="../../../images/front-cover-img.png"
+              alt="hair services"
+              placeholder="none"
+            />
           </Image>
         </Column2>
       </Row>
