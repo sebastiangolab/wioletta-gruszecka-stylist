@@ -20,7 +20,9 @@ const IndexPage = () => {
           aboutText2
           servicesText
           gallery {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 375
+            )
           }
         }
         datoCmsContact {

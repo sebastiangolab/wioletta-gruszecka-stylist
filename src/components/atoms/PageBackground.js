@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BackgroundImg from 'images/background.png';
+import BackgroundImg from 'images/background.webp';
 
 const PageBackground = styled.div`
   display: block;

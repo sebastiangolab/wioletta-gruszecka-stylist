@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 375px) {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -57,7 +57,7 @@ export const Wrapper = styled.div`
       max-height: 360px;
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: 375px) {
       max-height: 400px;
     }
   }

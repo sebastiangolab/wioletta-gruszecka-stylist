@@ -65,6 +65,7 @@ const FrontCover = ({ text }) => {
           <Image>
             <StaticImage
               src="../../../images/front-cover-img.png"
+              width={754}
               alt="hair services"
               placeholder="none"
             />

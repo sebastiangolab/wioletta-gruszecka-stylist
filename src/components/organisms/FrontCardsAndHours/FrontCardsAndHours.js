@@ -18,6 +18,7 @@ const FrontCardsAndHours = ({ daysHour }) => (
         <p>In our salon you can order a voucher for services</p>
         <StaticImage
           src="../../../images/voucher-for-services.jpg"
+          width={492}
           alt="voucher for services"
           placeholder="none"
         />
@@ -28,6 +29,7 @@ const FrontCardsAndHours = ({ daysHour }) => (
         <p>Collect stamps on the card to get promotions for services</p>
         <StaticImage
           src="../../../images/loyalty-card.jpg"
+          width={492}
           alt="loyalty card"
           placeholder="none"
         />

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FrontAboutBackground from "images/front-about-background.jpg";
+import FrontAboutBackground from "images/front-about-background.webp";
 
 export const Wrapper = styled.div`
   margin-top: ${({ theme }) => theme.marginBetweenSections};

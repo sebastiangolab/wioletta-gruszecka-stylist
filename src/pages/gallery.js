@@ -10,7 +10,9 @@ const Gallery = () => {
       query GalleryQuery {
         datoCmsGalleryPage {
           gallery {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 375
+            )
           }
         }
       }

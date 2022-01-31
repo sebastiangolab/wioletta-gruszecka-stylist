@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeaderCoverBackground from "images/header-cover-background.jpg";
+import HeaderCoverBackground from "images/header-cover-background.webp";
 
 export const Wrapper = styled.div`
   position: relative;

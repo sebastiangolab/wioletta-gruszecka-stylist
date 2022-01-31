@@ -12,7 +12,9 @@ const About = () => {
       query AboutQuery {
         datoCmsAbout {
           gallery {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 375
+            )
           }
           text1
           text2

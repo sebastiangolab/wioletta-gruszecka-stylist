@@ -38,6 +38,7 @@ const FrontAbout = ({ aboutText1, aboutText2 }) => (
       <Image>
         <StaticImage
           src="../../../images/front-about-img.png"
+          width={427}
           alt="about me"
           placeholder="none"
         />
