@@ -2,14 +2,22 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     @media (max-width: 1589px) {
-        img {
+        & > div {
             width: 200px;
+
+            img {
+                object-fit: contain;
+            }
         }
     }
 
     @media (max-width: 1199px) {
-        img {
+        & > div {
             width: 180px;
+
+            img {
+                object-fit: contain;
+            }
         }
     }
 
