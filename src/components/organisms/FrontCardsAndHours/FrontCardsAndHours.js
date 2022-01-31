@@ -16,12 +16,14 @@ const FrontCardsAndHours = ({ daysHour }) => (
       <div>
         <StyledPageTitle>Voucher for services</StyledPageTitle>
         <p>In our salon you can order a voucher for services</p>
-        <StaticImage
-          src="../../../images/voucher-for-services.jpg"
-          width={492}
-          alt="voucher for services"
-          placeholder="none"
-        />
+        <a href="https://booksy.com/en-gb/57758_wioletta-gruszecka-stylist_hair-salon_1177313_patchway" target="_blank">
+          <StaticImage
+            src="../../../images/voucher-for-services.jpg"
+            width={492}
+            alt="voucher for services"
+            placeholder="none"
+          />
+        </a>
       </div>
 
       <div>

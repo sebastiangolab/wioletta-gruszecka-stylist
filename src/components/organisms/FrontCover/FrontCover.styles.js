@@ -126,7 +126,7 @@ export const Column2 = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 0 0 ${({ theme }) => theme.borderRadius} 0;
   width: calc(58.33333333% - 15px);
-  height: ${({ height }) => `${height}px`};
+  height: ${({ height }) => height === 0 ? '100vh' : `${height}px`};
   position: relative;
   display: flex;
   align-items: center;

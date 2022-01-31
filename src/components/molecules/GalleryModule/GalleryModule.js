@@ -4,7 +4,7 @@ import { Wrapper } from "./GalleryModule.styles";
 import Lightbox from "react-image-lightbox";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const Gallery = ({
+const GalleryModule = ({
   isGalleryPage = false,
   isTabletLastImageHide = false,
   ...args
@@ -24,6 +24,7 @@ const Gallery = ({
       isTabletLastImageHide={isTabletLastImageHide}
     >
       {images.map((image, index) => {
+        {console.log(image);}
         const image2 = getImage(image);
         return (
           <GatsbyImage
@@ -37,9 +38,9 @@ const Gallery = ({
 
       {isOpen && (
         <Lightbox
-          mainSrc={images[photoIndex]}
-          nextSrc={images[(photoIndex + 1) % images.length]}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          mainSrc={images[photoIndex].gatsbyImageData.images.fallback.src}
+          nextSrc={images[(photoIndex + 1) % images.length].gatsbyImageData.images.fallback.src}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length].gatsbyImageData.images.fallback.src}
           onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>
             setPhotoIndex((photoIndex + images.length - 1) % images.length)
@@ -53,4 +54,4 @@ const Gallery = ({
   );
 };
 
-export default Gallery;
+export default GalleryModule;
