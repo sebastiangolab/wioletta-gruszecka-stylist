@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { axiosClient } from "api/axiosClient";
+import { indexQuery } from "api/queries";
+import SEO from "components/SEO";
 import FrontCover from "components/organisms/FrontCover/FrontCover";
 import Container from "components/atoms/Container";
 import FrontAbout from "components/organisms/FrontAbout/FrontAbout";
@@ -7,63 +10,54 @@ import FrontGallery from "components/organisms/FrontGallery/FrontGallery";
 import FrontCardsAndHours from "components/organisms/FrontCardsAndHours/FrontCardsAndHours";
 import FullContainer from "components/atoms/FullContainer";
 import PageBackground from "components/atoms/PageBackground";
-import { graphql } from "gatsby";
-import SEO from "components/SEO";
 
-const IndexPage = ({ data: { datoCmsHome, datoCmsContact } }) => (
-  <>
-    <SEO title="Wioletta Gruszecka Stylist" />
-    <Container>
-      <FrontCover text={datoCmsHome.mainText} />
-    </Container>
+const IndexPage = () => {
+  const [dataQuery, setDataQuery] = useState();
 
-    <FullContainer>
-      <PageBackground />
+  useEffect(() => {
+    axiosClient
+      .post("/", { query: indexQuery })
+      .then((responseData) => setDataQuery(responseData.data.data))
+      .catch((err) => console.log(err));
+  }, []);
 
-      <Container>
-        <FrontAbout
-          aboutText1={datoCmsHome.aboutText1}
-          aboutText2={datoCmsHome.aboutText2}
-        />
-        <FrontServices servicesText={datoCmsHome.servicesText} />
-        <FrontGallery images={datoCmsHome.gallery} />
-        <FrontCardsAndHours
-          daysHour={{
-            monday: datoCmsContact.monday,
-            tuesday: datoCmsContact.tuesday,
-            wednesday: datoCmsContact.wednesday,
-            thursday: datoCmsContact.thursday,
-            friday: datoCmsContact.friday,
-            saturday: datoCmsContact.saturday,
-            sunday: datoCmsContact.sunday,
-          }}
-        />
-      </Container>
-    </FullContainer>
-  </>
-);
+  return (
+    <>
+      {dataQuery && (
+        <>
+          <SEO title="Wioletta Gruszecka Stylist" />
+
+          <Container>
+            <FrontCover text={dataQuery.home.mainText} />
+          </Container>
+
+          <FullContainer>
+            <PageBackground />
+
+            <Container>
+              <FrontAbout
+                aboutText1={dataQuery.home.aboutText1}
+                aboutText2={dataQuery.home.aboutText2}
+              />
+              <FrontServices servicesText={dataQuery.home.servicesText} />
+              <FrontGallery images={dataQuery.home.gallery} />
+              <FrontCardsAndHours
+                daysHour={{
+                  monday: dataQuery.contact.monday,
+                  tuesday: dataQuery.contact.tuesday,
+                  wednesday: dataQuery.contact.wednesday,
+                  thursday: dataQuery.contact.thursday,
+                  friday: dataQuery.contact.friday,
+                  saturday: dataQuery.contact.saturday,
+                  sunday: dataQuery.contact.sunday,
+                }}
+              />
+            </Container>
+          </FullContainer>
+        </>
+      )}
+    </>
+  );
+};
 
 export default IndexPage;
-
-export const query = graphql`
-  query IndexQuery {
-    datoCmsHome {
-      mainText
-      aboutText1
-      aboutText2
-      servicesText
-      gallery {
-        gatsbyImageData(width: 375)
-      }
-    }
-    datoCmsContact {
-      monday
-      tuesday
-      wednesday
-      thursday
-      friday
-      saturday
-      sunday
-    }
-  }
-`;

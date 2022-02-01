@@ -13,6 +13,8 @@ const GalleryModule = ({
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
+  console.log(images[0].url);
+
   const handleOnClickImage = (index) => {
     setIsOpen(true);
     setPhotoIndex(index);
@@ -24,8 +26,26 @@ const GalleryModule = ({
       isTabletLastImageHide={isTabletLastImageHide}
     >
       {images.map((image, index) => {
-        {console.log(image);}
-        const image2 = getImage(image);
+        const { responsiveImage } = image;
+
+        const gatsbyImageData = {
+          height: responsiveImage.height,
+          images: {
+            fallback: {
+              sizes: responsiveImage.sizes,
+              src: responsiveImage.src,
+              srcSet: responsiveImage.srcSet,
+            },
+            sources: [],
+          },
+          layout: "constrained",
+          placeholder: {
+            fallback: responsiveImage.base64,
+          },
+          width: responsiveImage.width,
+        };
+
+        const image2 = getImage(gatsbyImageData);
         return (
           <GatsbyImage
             key={index}
@@ -38,9 +58,11 @@ const GalleryModule = ({
 
       {isOpen && (
         <Lightbox
-          mainSrc={images[photoIndex].gatsbyImageData.images.fallback.src}
-          nextSrc={images[(photoIndex + 1) % images.length].gatsbyImageData.images.fallback.src}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length].gatsbyImageData.images.fallback.src}
+          mainSrc={images[photoIndex].url}
+          nextSrc={images[(photoIndex + 1) % images.length].url}
+          prevSrc={
+            images[(photoIndex + images.length - 1) % images.length].url
+          }
           onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>
             setPhotoIndex((photoIndex + images.length - 1) % images.length)

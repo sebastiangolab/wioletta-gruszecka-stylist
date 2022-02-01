@@ -5,7 +5,7 @@ import Review from "../../molecules/Review/Review";
 const ReviewsList = ({ reviews }) => (
   <Wrapper>
     {reviews.map((review) => (
-      <Review key={review.node.author} data={review.node} />
+      <Review key={review.author} data={review} />
     ))}
   </Wrapper>
 );
