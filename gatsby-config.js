@@ -6,11 +6,5 @@ module.exports = {
     keywords: `stylist, hairdresser`,
     siteUrl: `https://wiolettagruszecka.co.uk/`,
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp",  "gatsby-plugin-fontawesome-css", "gatsby-plugin-root-import",
-  {
-    resolve: `gatsby-source-datocms`,
-    options: {
-      apiToken: `ae5d3f45294cae2cceb3d358a1cf0e`,
-    },
-  },]
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp",  "gatsby-plugin-fontawesome-css", "gatsby-plugin-root-import"]
 };

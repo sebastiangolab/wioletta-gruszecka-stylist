@@ -40,15 +40,3 @@ const About = () => {
 };
 
 export default About;
-
-export const query = graphql`
-  query AboutQuery {
-    datoCmsAbout {
-      gallery {
-        gatsbyImageData(width: 375)
-      }
-      text1
-      text2
-    }
-  }
-`;
