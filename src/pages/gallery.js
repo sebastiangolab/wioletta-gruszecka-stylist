@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosClient } from "api/axiosClient";
 import { galleryQuery } from "api/queries";
+import LayoutLoader from "components/molecules/LayoutLoader/LayoutLoader";
 import SEO from "components/SEO";
 import ContentTemplate from "templates/ContentTemplate/ContentTemplate";
 import GalleryModule from "components/molecules/GalleryModule/GalleryModule";
@@ -26,6 +27,7 @@ const Gallery = () => {
           </ContentTemplate>
         </>
       )}
+      {!dataQuery && <LayoutLoader />}
     </>
   );
 };

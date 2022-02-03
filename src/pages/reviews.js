@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosClient } from "api/axiosClient";
 import { reviewsQuery } from "api/queries";
+import LayoutLoader from "components/molecules/LayoutLoader/LayoutLoader";
 import SEO from "components/SEO";
 import ContentTemplate from "templates/ContentTemplate/ContentTemplate";
 import ReviewsList from "components/organisms/ReviewsList/ReviewsList";
@@ -29,6 +30,7 @@ const Reviews = () => {
           </ContentTemplate>
         </>
       )}
+      {!dataQuery && <LayoutLoader />}
     </>
   );
 };

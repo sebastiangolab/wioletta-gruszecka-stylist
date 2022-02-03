@@ -1,12 +1,11 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Wrapper } from "./MobileMenuButton.styles";
+import { FaBars } from 'react-icons/fa';
 
 const MobileMenuButton = (props) => {
   return (
     <Wrapper {...props}>
-      <FontAwesomeIcon icon={faBars} />
+      <FaBars />
     </Wrapper>
   );
 };

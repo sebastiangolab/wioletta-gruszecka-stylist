@@ -7,13 +7,15 @@ export const Wrapper = styled.div`
         font-size: 25px;
         font-weight: 300;
         background-color: ${({theme}) => theme.colors.primary};
-        padding: 6px 20px 2px;
         border-radius: 7px;
-        display: block;
         margin-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 20px 10px;
     }
 
     @media (max-width: 575px) {
-        padding: 8px 20px 4px;
+        padding: 12px 20px 11px;
     }
 `;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosClient } from "api/axiosClient";
 import { servicesQuery } from "api/queries";
+import LayoutLoader from "components/molecules/LayoutLoader/LayoutLoader";
 import SEO from "components/SEO";
 import ContentTemplate from "templates/ContentTemplate/ContentTemplate";
 import ContentContainer from "components/atoms/ContentContainer";
@@ -33,6 +34,7 @@ const Services = () => {
           </ContentTemplate>
         </>
       )}
+      {!dataQuery && <LayoutLoader />}
     </>
   );
 };

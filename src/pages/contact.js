@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosClient } from "api/axiosClient";
 import { contactQuery } from "api/queries";
+import LayoutLoader from "components/molecules/LayoutLoader/LayoutLoader";
 import SEO from "components/SEO";
 import ContentTemplate from "templates/ContentTemplate/ContentTemplate";
 import ContentContainer from "components/atoms/ContentContainer";
@@ -8,11 +9,7 @@ import ContactParagraph from "components/atoms/ContactParagraph";
 import ContactIcon from "components/atoms/ContactIcon";
 import OpeningHours from "components/molecules/OpeningHours/OpeningHours";
 import Map from "components/molecules/Map/Map";
-import {
-  faPhoneAlt,
-  faEnvelope,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
   const [dataQuery, setDataQuery] = useState();
@@ -33,17 +30,17 @@ const Contact = () => {
           <ContentTemplate title="Contact">
             <ContentContainer>
               <ContactParagraph>
-                <ContactIcon icon={faPhoneAlt} />
+                <ContactIcon><FaPhoneAlt /></ContactIcon>
                 {dataQuery.contact.phone}
               </ContactParagraph>
 
               <ContactParagraph>
-                <ContactIcon icon={faEnvelope} />
+              <ContactIcon><FaEnvelope /></ContactIcon>
                 {dataQuery.contact.email}
               </ContactParagraph>
 
               <ContactParagraph>
-                <ContactIcon icon={faMapMarkerAlt} />
+              <ContactIcon><FaMapMarkerAlt /></ContactIcon>
                 {dataQuery.contact.adres1} <br />
                 {dataQuery.contact.adres2}
               </ContactParagraph>
@@ -64,6 +61,7 @@ const Contact = () => {
           </ContentTemplate>
         </>
       )}
+      {!dataQuery && <LayoutLoader />}
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosClient } from "api/axiosClient";
 import { indexQuery } from "api/queries";
+import LayoutLoader from "components/molecules/LayoutLoader/LayoutLoader";
 import SEO from "components/SEO";
 import FrontCover from "components/organisms/FrontCover/FrontCover";
 import Container from "components/atoms/Container";
@@ -56,6 +57,7 @@ const IndexPage = () => {
           </FullContainer>
         </>
       )}
+      {!dataQuery && <LayoutLoader />}
     </>
   );
 };
