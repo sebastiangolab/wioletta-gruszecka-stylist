@@ -39,11 +39,11 @@ const Contact = () => {
                 {dataQuery.contact.email}
               </ContactParagraph>
 
-              <ContactParagraph>
+              {/* <ContactParagraph>
               <ContactIcon><FaMapMarkerAlt /></ContactIcon>
                 {dataQuery.contact.adres1} <br />
                 {dataQuery.contact.adres2}
-              </ContactParagraph>
+              </ContactParagraph> */}
 
               <OpeningHours
                 monday={dataQuery.contact.monday}
@@ -56,8 +56,7 @@ const Contact = () => {
                 isContactPage
               />
             </ContentContainer>
-
-            <Map />
+            {/* <Map /> */}
           </ContentTemplate>
         </>
       )}

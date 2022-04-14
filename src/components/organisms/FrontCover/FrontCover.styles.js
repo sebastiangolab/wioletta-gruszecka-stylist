@@ -106,13 +106,14 @@ export const Socials = styled.div`
       height: 1px;
       background-color: ${({ theme }) => theme.colors.black};
     }
-    &:first-child {
-      margin-bottom: 35px;
+    &:first-child,
+    &:nth-child(2) {
+      margin-bottom: 27px;
       @media (max-width: 1589px) {
-        margin-bottom: 30px;
+        margin-bottom: 21px;
       }
       @media (max-width: 1199px) {
-        margin-bottom: 25px;
+        margin-bottom: 17px;
       }
     }
     svg {

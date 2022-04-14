@@ -13,9 +13,9 @@ const ServicesList = ({ services: categories }) => {
       {sortCategories.map((category) => (
         <CategoryWrapper key={category.title}>
           <Category>{category.title}</Category>
-          {category.children.map((service) => (
+          {/* {category.children.map((service) => (
             <Service key={service.title} data={service} />
-          ))}
+          ))} */}
         </CategoryWrapper>
       ))}
     </Wrapper>

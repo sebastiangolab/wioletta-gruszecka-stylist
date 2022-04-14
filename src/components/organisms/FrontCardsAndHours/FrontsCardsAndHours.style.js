@@ -38,9 +38,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Cards = styled.div`
-  width: calc(66.66666667% - 24px);
+  width: calc(50% - 24px);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 50px;
   text-align: center;
 
@@ -49,7 +49,7 @@ export const Cards = styled.div`
   }
 
   @media (max-width: 1199px) {
-    width: calc(64% - 30px);
+    width: calc(50% - 30px);
   }
 
   @media (max-width: 991px) {
@@ -87,7 +87,7 @@ export const StyledPageTitle = styled(PageTitle)`
 `;
 
 export const HoursContainer = styled.div`
-  width: calc(33.33333333% - 15px);
+  width: calc(50% - 15px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +99,7 @@ export const HoursContainer = styled.div`
   }
 
   @media (max-width: 1199px) {
-    width: calc(37% - 10px);
+    width: calc(50% - 10px);
   }
 
   @media (max-width: 991px) {

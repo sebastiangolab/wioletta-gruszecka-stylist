@@ -14,8 +14,8 @@ const OpeningHours = ({
 }) => (
   <Wrapper isContactPage={isContactPage}>
     <PageTitle isContactPage={isContactPage}>Opening hours:</PageTitle>
-
-    <p>
+    <p>As a freelance I'm not working on specific hours so please contact me to get appointment or try find the best date for you on booksy website</p>
+    {/* <p>
       Monday: <strong>{monday}</strong>
     </p>
 
@@ -41,7 +41,7 @@ const OpeningHours = ({
 
     <p>
       Sunday: <strong>{sunday}</strong>
-    </p>
+    </p> */}
   </Wrapper>
 );
 

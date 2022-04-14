@@ -95,6 +95,7 @@ export const Service = styled.div`
   border: 3px solid ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 52px 10px;
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -115,12 +116,12 @@ export const Service = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.xl};
     font-weight: ${({ theme }) => theme.fontWeights.regular};
     line-height: 1.5em;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
     text-align: center;
 
     @media (max-width: 1589px) {
       font-size: ${({ theme }) => theme.fontSizes.m};
-      margin-bottom: 15px;
+      /* margin-bottom: 15px; */
     }
   }
 `;

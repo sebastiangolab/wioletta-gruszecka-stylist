@@ -11,7 +11,7 @@ import {
 import Button from "components/atoms/Button";
 import PageTitle from "components/atoms/PageTitle";
 // import FrontCoverImg from "images/front-cover-img.png";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { StaticImage } from "gatsby-plugin-image";
 
 const FrontCover = ({ text }) => {
@@ -58,6 +58,17 @@ const FrontCover = ({ text }) => {
               <FaInstagram />
               Follow our profile
             </a>
+
+            <a
+              href="https://www.tiktok.com/@wiolagruszecka"
+              title="Tik tok"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <FaTiktok />
+              Follow our TikTok
+            </a>
+
           </Socials>
         </Column1>
 

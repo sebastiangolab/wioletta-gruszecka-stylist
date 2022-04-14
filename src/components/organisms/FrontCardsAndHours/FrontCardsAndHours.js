@@ -15,7 +15,7 @@ const FrontCardsAndHours = ({ daysHour }) => (
     <Cards>
       <div>
         <StyledPageTitle>Voucher for services</StyledPageTitle>
-        <p>In our salon you can order a voucher for services</p>
+        <p>You can order a voucher for services</p>
         <a href="https://booksy.com/en-gb/57758_wioletta-gruszecka-stylist_hair-salon_1177313_patchway" target="_blank">
           <StaticImage
             src="../../../images/voucher-for-services.jpg"
@@ -26,7 +26,7 @@ const FrontCardsAndHours = ({ daysHour }) => (
         </a>
       </div>
 
-      <div>
+      {/* <div>
         <StyledPageTitle>Loyalty card</StyledPageTitle>
         <p>Collect stamps on the card to get promotions for services</p>
         <StaticImage
@@ -35,7 +35,7 @@ const FrontCardsAndHours = ({ daysHour }) => (
           alt="loyalty card"
           placeholder="none"
         />
-      </div>
+      </div> */}
     </Cards>
 
     <HoursContainer>

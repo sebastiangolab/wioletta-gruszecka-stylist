@@ -9,9 +9,11 @@ export const Wrapper = styled.div`
 `;
 
 export const CategoryWrapper = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  /* margin-bottom: 60px; */
 
   @media (max-width: 575px) {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    /* margin-bottom: 50px; */
   }
 `;

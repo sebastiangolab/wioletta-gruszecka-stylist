@@ -27,27 +27,27 @@ const FrontServices = ({ servicesText }) => (
     <ServicesList>
       <Service>
         <h2>Cut service</h2>
-        <StyledLink to="/services">See more</StyledLink>
+        {/* <StyledLink to="/services">See more</StyledLink> */}
       </Service>
 
       <Service>
         <h2>Colour service</h2>
-        <StyledLink to="/services">See more</StyledLink>
+        {/* <StyledLink to="/services">See more</StyledLink> */}
       </Service>
 
       <Service>
-        <h2>Treatment</h2>
-        <StyledLink to="/services">See more</StyledLink>
+        <h2>{'Scalp & Hair treatment '}</h2>
+        {/* <StyledLink to="/services">See more</StyledLink> */}
       </Service>
 
       <Service>
-        <h2>Exclusive</h2>
-        <StyledLink to="/services">See more</StyledLink>
+        <h2>Hair extensions</h2>
+        {/* <StyledLink to="/services">See more</StyledLink> */}
       </Service>
 
       <Service>
-        <h2>MAKE-UP</h2>
-        <StyledLink to="/services">See more</StyledLink>
+        <h2>Bridal services</h2>
+        {/* <StyledLink to="/services">See more</StyledLink> */}
       </Service>
     </ServicesList>
   </Wrapper>
