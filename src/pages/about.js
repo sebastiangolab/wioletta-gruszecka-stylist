@@ -22,9 +22,9 @@ const About = () => {
     <>
       {dataQuery && (
         <>
-          <SEO title="About us | Wioletta Gruszecka Stylist" />
+          <SEO title="About me | Wioletta Gruszecka Stylist" />
 
-          <ContentTemplate title="About us">
+          <ContentTemplate title="About me">
             <ContentContainer>
               <AboutParagraph>{dataQuery.about.text1}</AboutParagraph>
               <AboutParagraph>{dataQuery.about.text2}</AboutParagraph>

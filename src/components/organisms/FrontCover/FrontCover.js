@@ -46,7 +46,7 @@ const FrontCover = ({ text }) => {
               target="_blank"
             >
               <FaFacebookF />
-              Like our fanpage
+              Like my fanpage
             </a>
 
             <a
@@ -56,7 +56,7 @@ const FrontCover = ({ text }) => {
               target="_blank"
             >
               <FaInstagram />
-              Follow our profile
+              Follow my profile
             </a>
 
             <a
@@ -66,7 +66,7 @@ const FrontCover = ({ text }) => {
               target="_blank"
             >
               <FaTiktok />
-              Follow our TikTok
+              Follow my TikTok
             </a>
 
           </Socials>
